@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|right"
+        android:text="zhehisyifians k"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:rowCount="6"
+        android:columnCount="4">
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:id="@+id/buttonPanel"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+        android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+        <Button android:text="MC"
+            android:layout_columnWeight="1"/>
+
+        <Button android:text="MC"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="3"/>
+
+
+
+    </GridLayout>
+
+</RelativeLayout>
