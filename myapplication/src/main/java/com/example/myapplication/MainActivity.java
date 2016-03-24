@@ -1,103 +1,33 @@
 package com.example.myapplication;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    private Button mButton;
+    private EditText mEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("运行到MainActivity的onCreate方法");
-        Button button = (Button) findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //此处是点击事件，该事件启动一个新的界面
-                Intent intent = new Intent();
-                //显示的启动Activity，，使用的是Component属性指定了将要启动的组件的名称
-                intent.setComponent(new ComponentName(MainActivity.this, SecActivity.class));
-                intent.putExtra("text","我是从第一个界面的信息，第二个界面显示这段话吧");
-
-               // Student zhangsan = new Student("张三","男","20");
-               // intent.putExtra("student",zhangsan);
-
-               // Bundle bundle = new Bundle();
-               // bundle.putCharSequence("name","张三");
-               // bundle.putCharSequence("sex","男");
-                //bundle.putCharSequence("age","19");
-               // intent.putExtra("student",bundle);
-
-                startActivity(intent);
-            }
-        });
-
-
-        Button button1 = (Button) findViewById(R.id.button2);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent("com.change.myapp");
-                startActivity(intent);
-
-            }
-        });
-        Button button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://www.baidu.com"));
-                startActivity(intent);
-
-            }
-        });
-        Button button4 = (Button) findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:10086"));
-                startActivity(intent);
-            }
-        });
-    }
-
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        System.out.println("运行了MainActivity方法的onstart");
+        mEditText = (EditText) findViewById(R.id.editText);
+        mButton = (Button) findViewById(R.id.my_button);
+        mButton.setOnClickListener(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        System.out.println("运行了MainActivity方法的onResume");
+    public void onClick(View v) {
+        String str = mEditText.getText().toString();
+        if (str.equals("")){
+            Toast.makeText(this,"请输入内容！",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this,str,Toast.LENGTH_SHORT).show();
+        }
+        }
+
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        System.out.println("运行了MainActivity方法的onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        System.out.println("运行了MainActivity方法的onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        System.out.println("运行了MainActivity方法的onDestroy");
-    }
-}

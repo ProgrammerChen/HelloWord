@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="editText">请输入你的专业</string>
 </resources>
